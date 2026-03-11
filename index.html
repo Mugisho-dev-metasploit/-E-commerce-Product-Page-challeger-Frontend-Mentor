@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sneakers | E-commerce Product Page</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="stylesheet" href="./CSS/styles.css">
+</head>
+<body>
+    <!-- MAIN CONTENT -->
+    <main class="container">
+        <!-- PRODUCT IMAGE GALLERY - ISSUE 4 -->
+        <section class="product-gallery">
+            <!-- Main Product Image -->
+            <div class="main-image-wrapper">
+                <img src="./images/image-product-1.jpg" 
+                     alt="Product image 1" 
+                     class="main-image" 
+                     id="mainImage">
+            </div>
+
+            <!-- Thumbnail Images -->
+            <div class="thumbnails">
+                <div class="thumbnail active" data-image="./images/image-product-1.jpg">
+                    <img src="./images/image-product-1-thumbnail.jpg" alt="Product thumbnail 1">
+                </div>
+                <div class="thumbnail" data-image="./images/image-product-2.jpg">
+                    <img src="./images/image-product-2-thumbnail.jpg" alt="Product thumbnail 2">
+                </div>
+                <div class="thumbnail" data-image="./images/image-product-3.jpg">
+                    <img src="./images/image-product-3-thumbnail.jpg" alt="Product thumbnail 3">
+                </div>
+                <div class="thumbnail" data-image="./images/image-product-4.jpg">
+                    <img src="./images/image-product-4-thumbnail.jpg" alt="Product thumbnail 4">
+                </div>
+            </div>
+        </section>
+
+        <!-- PRODUCT INFORMATION - ISSUE 5 -->
+        <section class="product-info">
+            <!-- Company Name -->
+            <div class="company-name">SNEAKER COMPANY</div>
+
+            <!-- Product Title -->
+            <h1 class="product-title">Fall Limited Edition Sneakers</h1>
+
+            <!-- Description -->
+            <p class="product-description">
+                These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.
+            </p>
+
+            <!-- Pricing Section -->
+            <div class="pricing-section">
+                <div class="pricing-container">
+                    <span class="current-price">$125.00</span>
+                    <span class="discount-badge">50%</span>
+                </div>
+                <span class="original-price">$250.00</span>
+            </div>
+        </section>
+    </main>
+
+    <script src="./JS/Script.js"></script>
+</body>
+</html>

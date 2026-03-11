@@ -1,0 +1,211 @@
+/* ================================
+   GLOBAL STYLES
+   ================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Primary Colors */
+    --color-orange: hsl(26, 100%, 55%);
+    --color-pale-orange: hsl(25, 100%, 94%);
+
+    /* Neutral Colors */
+    --color-very-dark-blue: hsl(220, 13%, 13%);
+    --color-dark-grayish-blue: hsl(219, 9%, 45%);
+    --color-grayish-blue: hsl(220, 14%, 75%);
+    --color-light-grayish-blue: hsl(223, 64%, 98%);
+    --color-white: hsl(0, 0%, 100%);
+    --color-black: hsl(0, 0%, 0%);
+
+    /* Typography */
+    --font-family: 'Kumbh Sans', sans-serif;
+    --font-size-body: 16px;
+    --font-weight-regular: 400;
+    --font-weight-bold: 700;
+}
+
+html {
+    font-family: var(--font-family);
+    font-size: var(--font-size-body);
+    font-weight: var(--font-weight-regular);
+    color: var(--color-very-dark-blue);
+}
+
+body {
+    background-color: var(--color-white);
+}
+
+/* ================================
+   MAIN CONTAINER
+   ================================ */
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+/* ================================
+   ISSUE 4: PRODUCT IMAGE GALLERY
+   ================================ */
+
+.product-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 500px;
+}
+
+/* Main Product Image */
+.main-image-wrapper {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 1rem;
+    background-color: var(--color-light-grayish-blue);
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.main-image-wrapper:hover {
+    transform: scale(1.02);
+}
+
+.main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.main-image-wrapper:hover .main-image {
+    transform: scale(1.05);
+}
+
+/* Thumbnails */
+.thumbnails {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: flex-start;
+}
+
+.thumbnail {
+    width: 88px;
+    height: 88px;
+    border-radius: 0.625rem;
+    cursor: pointer;
+    overflow: hidden;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    background-color: var(--color-light-grayish-blue);
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+/* Hover State */
+.thumbnail:hover {
+    opacity: 0.7;
+    border-color: var(--color-orange);
+}
+
+.thumbnail:hover img {
+    opacity: 0.5;
+}
+
+/* Active State */
+.thumbnail.active {
+    border: 2px solid var(--color-orange);
+}
+
+.thumbnail.active img {
+    opacity: 0.3;
+}
+
+/* ================================
+   ISSUE 5: PRODUCT INFORMATION
+   ================================ */
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 500px;
+}
+
+/* Company Name */
+.company-name {
+    font-size: 0.875rem;
+    font-weight: var(--font-weight-bold);
+    letter-spacing: 1.86px;
+    color: var(--color-orange);
+    text-transform: uppercase;
+}
+
+/* Product Title */
+.product-title {
+    font-size: 2.75rem;
+    font-weight: var(--font-weight-bold);
+    line-height: 1.1;
+    color: var(--color-very-dark-blue);
+}
+
+/* Product Description */
+.product-description {
+    font-size: 1rem;
+    font-weight: var(--font-weight-regular);
+    line-height: 1.6;
+    color: var(--color-dark-grayish-blue);
+    margin-bottom: 0.5rem;
+}
+
+/* Pricing Section */
+.pricing-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.pricing-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.current-price {
+    font-size: 1.75rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-very-dark-blue);
+}
+
+.discount-badge {
+    background-color: var(--color-pale-orange);
+    color: var(--color-orange);
+    font-size: 0.875rem;
+    font-weight: var(--font-weight-bold);
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+}
+
+.original-price {
+    font-size: 1rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-grayish-blue);
+    text-decoration: line-through;
+}
+
