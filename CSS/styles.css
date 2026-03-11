@@ -1,6 +1,4 @@
-/* ================================
-   GLOBAL STYLES
-   ================================ */
+/* GLOBAL STYLES */
 
 * {
     margin: 0;
@@ -39,9 +37,7 @@ body {
     background-color: var(--color-white);
 }
 
-/* ================================
-   MAIN CONTAINER
-   ================================ */
+/* MAIN CONTAINER */
 
 .container {
     max-width: 1440px;
@@ -53,9 +49,7 @@ body {
     align-items: start;
 }
 
-/* ================================
-   ISSUE 4: PRODUCT IMAGE GALLERY
-   ================================ */
+/* ISSUE 4: PRODUCT IMAGE GALLERY */
 
 .product-gallery {
     display: flex;
@@ -137,9 +131,7 @@ body {
     opacity: 0.3;
 }
 
-/* ================================
-   ISSUE 5: PRODUCT INFORMATION
-   ================================ */
+/* ISSUE 5: PRODUCT INFORMATION */
 
 .product-info {
     display: flex;
