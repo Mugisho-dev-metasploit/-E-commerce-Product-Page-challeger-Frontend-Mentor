@@ -5,10 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sneakers | E-commerce Product Page</title>
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./CSS/styles.css">
 </head>
 <body>
     <!-- MAIN CONTENT -->
+    <!-- CART DROPDOWN (ISSUE 8) -->
+    <div class="cart-dropdown" id="cartDropdown" hidden>
+        <h2>Cart</h2>
+        <div class="cart-empty">Your cart is empty.</div>
+        <div class="cart-items">
+            <div class="cart-item">
+                <img src="./images/image-product-1-thumbnail.jpg" alt="Product thumbnail">
+                <div class="item-details">
+                    <p class="item-name">Fall Limited Edition Sneakers</p>
+                    <p class="item-price">$125.00 x <span id="cartQuantity">0</span> <strong id="cartTotal">$0.00</strong></p>
+                </div>
+                <button class="delete-btn" aria-label="Remove item">
+                    <img src="./images/icon-delete.svg" alt="Delete">
+                </button>
+            </div>
+        </div>
+        <button class="checkout-btn">Checkout</button>
+    </div>
+
     <main class="container">
         <!-- PRODUCT SECTION - ISSUES 4 & 5 --> 
         <section class="product-section">
@@ -59,6 +81,26 @@
                         <span class="discount-badge">50%</span>
                     </div>
                     <span class="original-price">$250.00</span>
+                </div>
+
+                <!-- ACTIONS (QUANTITY + ADD TO CART) -->
+                <div class="product-actions">
+                    <!-- QUANTITY SELECTOR - ISSUE 6 -->
+                    <div class="quantity-selector">
+                        <button class="quantity-btn" id="decreaseBtn" aria-label="Decrease quantity">
+                            <img src="./images/icon-minus.svg" alt="Minus">
+                        </button>
+                        <span class="quantity-display" id="quantityDisplay">0</span>
+                        <button class="quantity-btn" id="increaseBtn" aria-label="Increase quantity">
+                            <img src="./images/icon-plus.svg" alt="Plus">
+                        </button>
+                    </div>
+
+                    <!-- ADD TO CART BUTTON - ISSUE 7 -->
+                    <button class="add-to-cart-btn" id="addToCartBtn">
+                        <img src="./images/icon-cart.svg" alt="">
+                        Add to cart
+                    </button>
                 </div>
             </div>
         </section>
