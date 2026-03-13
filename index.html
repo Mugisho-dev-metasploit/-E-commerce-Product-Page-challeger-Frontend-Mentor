@@ -14,24 +14,72 @@
     <!-- Skip to content link for accessibility -->
     <a href="#main-content" class="skip-to-content">Skip to main content</a>
 
-    <!-- MAIN CONTENT -->
-    <!-- CART DROPDOWN (ISSUE 8) -->
-    <div class="cart-dropdown" id="cartDropdown" hidden>
-        <h2>Cart</h2>
-        <div class="cart-empty">Your cart is empty.</div>
-        <div class="cart-items">
-            <div class="cart-item">
-                <img src="./images/image-product-1-thumbnail.jpg" alt="Product thumbnail">
-                <div class="item-details">
-                    <p class="item-name">Fall Limited Edition Sneakers</p>
-                    <p class="item-price">$125.00 x <span id="cartQuantity">0</span> <strong id="cartTotal">$0.00</strong></p>
-                </div>
-                <button class="delete-btn" aria-label="Remove item">
-                    <img src="./images/icon-delete.svg" alt="Delete">
+    <!-- HEADER & NAVIGATION (ISSUE 3) -->
+    <header class="header">
+        <div class="header-container">
+            <div class="header-left">
+                <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu">
+                    <img src="./images/icon-menu.svg" alt="">
                 </button>
+                <div class="logo">
+                    <a href="/"><img src="./images/logo.svg" alt="Sneakers Logo"></a>
+                </div>
+                <nav class="desktop-nav" aria-label="Primary navigation">
+                    <ul>
+                        <li><a href="#">Collections</a></li>
+                        <li><a href="#">Men</a></li>
+                        <li><a href="#">Women</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+            
+            <div class="header-right">
+                <div class="cart-wrapper">
+                    <button class="cart-btn" id="cartBtn" aria-label="Shopping cart">
+                        <img src="./images/icon-cart.svg" alt="Cart">
+                        <span class="cart-badge" id="cartBadge" aria-label="Number of items in cart">0</span>
+                    </button>
+                    <!-- CART DROPDOWN (Now inside wrapper for better positioning) -->
+                    <div class="cart-dropdown" id="cartDropdown" hidden>
+                        <h2>Cart</h2>
+                        <div class="cart-content-wrapper">
+                            <div class="cart-empty">Your cart is empty.</div>
+                            <div class="cart-items">
+                            </div>
+                            <div class="cart-total">
+                                <strong>Total: <span id="cartTotal">$0.00</span></strong>
+                            </div>
+                            <button class="checkout-btn">Checkout</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="user-avatar">
+                    <button class="avatar-btn" aria-label="User profile">
+                        <img src="./images/image-avatar.png" alt="User avatar">
+                    </button>
+                </div>
             </div>
         </div>
-        <button class="checkout-btn">Checkout</button>
+    </header>
+
+    <!-- MOBILE MENU (ISSUE 3) -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay">
+        <div class="mobile-nav-drawer">
+            <button class="close-menu" id="closeMenu" aria-label="Close navigation menu">
+                <img src="./images/icon-close.svg" alt="">
+            </button>
+            <nav class="mobile-nav">
+                <ul>
+                    <li><a href="#">Collections</a></li>
+                    <li><a href="#">Men</a></li>
+                    <li><a href="#">Women</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </div>
 
     <main class="container" id="main-content">
@@ -41,10 +89,16 @@
             <div class="product-gallery">
                 <!-- Main Product Image -->
                 <div class="main-image-wrapper">
+                    <button class="mobile-gallery-btn prev" id="mobilePrev" aria-label="Previous image">
+                        <img src="./images/icon-previous.svg" alt="">
+                    </button>
                     <img src="./images/image-product-1.jpg" 
                          alt="Product image 1" 
                          class="main-image" 
                          id="mainImage">
+                    <button class="mobile-gallery-btn next" id="mobileNext" aria-label="Next image">
+                        <img src="./images/icon-next.svg" alt="">
+                    </button>
                 </div>
 
                 <!-- Thumbnail Images -->
@@ -108,6 +162,36 @@
             </div>
         </section>
     </main>
+
+    <!-- LIGHTBOX MODAL -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" aria-label="Close lightbox">
+                <img src="./images/icon-close.svg" alt="Close">
+            </button>
+            <button class="lightbox-prev" aria-label="Previous image">
+                <img src="./images/icon-previous.svg" alt="Previous">
+            </button>
+            <img src="./images/image-product-1.jpg" alt="Product image" class="lightbox-main-image" id="lightboxMainImage">
+            <button class="lightbox-next" aria-label="Next image">
+                <img src="./images/icon-next.svg" alt="Next">
+            </button>
+            <div class="lightbox-thumbnails">
+                <div class="lightbox-thumbnail active" data-image="./images/image-product-1.jpg">
+                    <img src="./images/image-product-1-thumbnail.jpg" alt="Thumbnail 1">
+                </div>
+                <div class="lightbox-thumbnail" data-image="./images/image-product-2.jpg">
+                    <img src="./images/image-product-2-thumbnail.jpg" alt="Thumbnail 2">
+                </div>
+                <div class="lightbox-thumbnail" data-image="./images/image-product-3.jpg">
+                    <img src="./images/image-product-3-thumbnail.jpg" alt="Thumbnail 3">
+                </div>
+                <div class="lightbox-thumbnail" data-image="./images/image-product-4.jpg">
+                    <img src="./images/image-product-4-thumbnail.jpg" alt="Thumbnail 4">
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="./JS/Script.js"></script>
 </body>
