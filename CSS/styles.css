@@ -362,9 +362,7 @@ body {
     opacity: 0.7;
 }
 
-/* ================================
-   ISSUE 10: POLISH & ACCESSIBILITY
-   ================================ */
+/* ISSUE 10: POLISH & ACCESSIBILITY */
 
 /* Focus states for keyboard navigation */
 .quantity-btn:focus,
@@ -388,7 +386,7 @@ body {
 .add-to-cart-btn:active {
     transform: scale(0.98);
 }
-
+  
 .checkout-btn:active {
     transform: scale(0.98);
 }
@@ -893,7 +891,7 @@ html {
     padding: 2px 8px;
     border-radius: 0.375rem;
 }
-
+ 
 .original-price {
     font-size: 1rem;
     font-weight: var(--font-weight-bold);
@@ -901,7 +899,7 @@ html {
     text-decoration: line-through;
 }
 
-/* ACTIONS */
+/* ACTIONS */  
 .product-actions {
     display: flex;
     align-items: center;
