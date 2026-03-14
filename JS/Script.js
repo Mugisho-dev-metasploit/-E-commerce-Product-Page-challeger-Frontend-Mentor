@@ -38,3 +38,40 @@ if (menuToggle && closeMenu && mobileNavOverlay) {
         }
     });
 }
+
+
+// ===================================================== 
+// ISSUE 4: PRODUCT IMAGE GALLERY
+// Main image gallery with thumbnail selection
+// =====================================================
+const mainImage = document.getElementById('mainImage');
+const thumbnails = document.querySelectorAll('.thumbnail');
+
+thumbnails.forEach(thumbnail => {
+    // Click handler
+    thumbnail.addEventListener('click', function() {
+        switchImage.call(this);
+    });
+    
+    // Keyboard handler  
+    thumbnail.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            switchImage.call(this);
+        }
+    });
+});
+
+function switchImage() {
+    const newImageSrc = this.getAttribute('data-image');
+    mainImage.src = newImageSrc;
+    mainImage.alt = this.querySelector('img').alt;
+    
+    // Update active thumbnail   
+    thumbnails.forEach(thumb => thumb.classList.remove('active'));
+    this.classList.add('active');
+    
+    // Update current image index for lightbox
+    currentImageIndex = images.findIndex(img => img === newImageSrc);
+}
+

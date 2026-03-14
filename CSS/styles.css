@@ -51,3 +51,360 @@ body {
     padding: 0 1.5rem;
 } 
 
+/* ISSUE 3: HEADER & NAVIGATION - STRICT DESIGN COMPLIANCE */
+.header {
+    border-bottom: 1px solid var(--color-light-grayish-blue);
+    margin-bottom: 5.625rem;
+    background-color: var(--color-white);
+}
+
+.header-container {
+    max-width: 1110px;
+    margin: 0 auto;
+    height: 112px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.5rem;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 3.5rem;
+    height: 100%;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    padding: 0.5rem;
+}
+
+.logo {
+    margin-bottom: 5px;
+}
+
+.desktop-nav {
+    height: 100%;
+}
+
+.desktop-nav ul {
+    display: flex;
+    gap: 2rem;
+    height: 100%;
+    list-style: none;
+}
+
+.desktop-nav ul li {
+    height: 100%;
+}
+
+.desktop-nav ul li a {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    color: var(--color-dark-grayish-blue);
+    text-decoration: none;
+    font-size: 0.9375rem;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.desktop-nav ul li a:hover {
+    color: var(--color-very-dark-blue);
+}
+
+.logo a {
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+.logo a:hover {
+    opacity: 0.8;
+}
+
+.desktop-nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -1px; /* Align exactly with the header's border-bottom */
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: var(--color-orange);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.2s ease;
+}
+
+.desktop-nav ul li a:hover::after {
+    transform: scaleX(1);
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 2.875rem;
+}
+
+.cart-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.cart-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    padding: 10px;
+    transition: transform 0.2s ease;
+}
+
+.cart-btn:hover {
+    transform: translateY(-2px);
+}
+
+.cart-btn img {
+    width: 21.82px;
+    height: 20px;
+}
+
+.cart-btn:hover img {
+    filter: brightness(0) saturate(100%) invert(50%) sepia(99%) saturate(1633%) hue-rotate(345deg) brightness(101%) contrast(106%);
+}
+
+.cart-badge {
+    position: absolute;
+    top: 3px;
+    right: 0px;
+    background-color: var(--color-orange);
+    color: var(--color-white);
+    font-size: 0.625rem;
+    font-weight: var(--font-weight-bold);
+    padding: 1px 6px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(255, 125, 26, 0.4);
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.cart-badge.bounce {
+    animation: badgeBounce 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes badgeBounce {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.4); }
+    100% { transform: scale(1); }
+}
+
+.user-avatar .avatar-btn {
+    background: none;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    transition: border-color 0.3s ease;
+    overflow: hidden;
+}
+
+.user-avatar .avatar-btn:hover {
+    border-color: var(--color-orange);
+}
+
+.user-avatar img {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* ISSUE 4: PRODUCT IMAGE GALLERY - Main image gallery with thumbnails */
+
+.product-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Main Product Image */
+.main-image-wrapper:hover {
+    transform: scale(1.01);
+}
+
+.mobile-gallery-btn {
+    display: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--color-white);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.mobile-gallery-btn img {
+    width: 10px;
+}
+
+.mobile-gallery-btn.prev {
+    left: 16px;
+}
+
+.mobile-gallery-btn.next {
+    right: 16px;
+}
+
+.main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.main-image-wrapper:hover .main-image {
+    transform: scale(1.05);
+}
+
+/* Thumbnails */
+.thumbnails {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: flex-start;
+}
+
+.thumbnail {
+    width: 88px;
+    height: 88px;
+    border-radius: 0.625rem;
+    cursor: pointer;
+    overflow: hidden;
+    border: 2px solid transparent;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: var(--color-light-grayish-blue);
+    position: relative;
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+/* Hover State */
+.thumbnail:hover {
+    opacity: 0.7;
+    border-color: var(--color-orange);
+}
+
+.thumbnail:hover img {
+    opacity: 0.5;
+}
+
+/* Active State */
+.thumbnail.active {
+    border: 2px solid var(--color-orange);
+    position: relative;
+}
+
+.thumbnail.active::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+.thumbnail.active img {
+    opacity: 1;
+}
+
+/* ISSUE 5: PRODUCT INFORMATION - Title, description, pricing, and layout */
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    max-width: 445px;
+}
+
+/* Company Name */
+.company-name {
+    font-size: 0.8125rem;
+    font-weight: var(--font-weight-bold);
+    letter-spacing: 2px;
+    color: var(--color-dark-grayish-blue);
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+}
+
+/* Product Title */
+.product-title {
+    font-size: 2.75rem;
+    font-weight: var(--font-weight-bold);
+    line-height: 1.05;
+    color: var(--color-very-dark-blue);
+    margin-bottom: 2rem;
+}
+
+/* Product Description */
+.product-description {
+    font-size: 1rem;
+    font-weight: var(--font-weight-regular);
+    line-height: 1.6;
+    color: var(--color-dark-grayish-blue);
+    margin-bottom: 1.75rem;
+}
+
+/* Pricing Section */
+.pricing-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    margin-bottom: 2rem;
+}
+
+.pricing-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.current-price {
+    font-size: 1.75rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-very-dark-blue);
+}
+
+.discount-badge {
+    color: var(--color-white);
+    background-color: var(--color-very-dark-blue);
+    font-size: 1rem;
+    font-weight: var(--font-weight-bold);
+    padding: 2px 8px;
+    border-radius: 0.375rem;
+}
+ 
+.original-price {
+    font-size: 1rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-grayish-blue);
+    text-decoration: line-through;
+}
+
