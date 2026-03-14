@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <!-- ISSUE 1: INITIAL SETUP - HTML5 semantic structure and meta tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,16 +11,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-     <!-- ISSUE 2: DESIGN SYSTEM - Font import for typography --> 
+    <!-- ISSUE 2: DESIGN SYSTEM - Font import for typography -->
 
     <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./CSS/styles.css">  
+    <link rel="stylesheet" href="./CSS/styles.css">
 </head>
- 
- 
+
+
 <body>
-     <!-- ISSUE 3: HEADER & NAVIGATION - Responsive header with navigation -->   
-    
+
+    <!-- ISSUE 10: POLISH & ACCESSIBILITY - Skip to content link for keyboard navigation -->
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+    <!-- ISSUE 3: HEADER & NAVIGATION - Responsive header with navigation -->
+
     <header class="header">
         <div class="header-container">
             <div class="header-left">
@@ -38,14 +44,14 @@
                     </ul>
                 </nav>
             </div>
-            
+
             <div class="header-right">
                 <div class="cart-wrapper">
                     <button class="cart-btn" id="cartBtn" aria-label="Shopping cart">
                         <img src="./images/icon-cart.svg" alt="Cart">
                         <span class="cart-badge" id="cartBadge" aria-label="Number of items in cart">0</span>
                     </button>
-                     <!-- ISSUE 8: CART DROPDOWN - Shopping cart with items and checkout -->
+                    <!-- ISSUE 8: CART DROPDOWN - Shopping cart with items and checkout -->
 
                     <div class="cart-dropdown" id="cartDropdown" hidden>
                         <h2>Cart</h2>
@@ -86,8 +92,8 @@
         </div>
     </div>
 
-<main class="container" id="main-content">
-    <!-- ISSUE 4 & 5: PRODUCT SECTION - Product gallery and information layout -->
+    <main class="container" id="main-content">
+        <!-- ISSUE 4 & 5: PRODUCT SECTION - Product gallery and information layout -->
         <section class="product-section" aria-label="Product details">
             <!-- ISSUE 4: PRODUCT GALLERY - Main image and thumbnail gallery -->
 
@@ -97,35 +103,36 @@
                     <button class="mobile-gallery-btn prev" id="mobilePrev" aria-label="Previous image">
                         <img src="./images/icon-previous.svg" alt="">
                     </button>
-                    <img src="./images/image-product-1.jpg" 
-                         alt="Product image 1" 
-                         class="main-image" 
-                         id="mainImage">
-                    <button class="mobile-gallery-btn next" id="mobileNext" aria-label="Next image"> 
+                    <img src="./images/image-product-1.jpg" alt="Product image 1" class="main-image" id="mainImage">
+                    <button class="mobile-gallery-btn next" id="mobileNext" aria-label="Next image">
                         <img src="./images/icon-next.svg" alt="">
                     </button>
                 </div>
 
                 <!-- Thumbnail Images -->
                 <div class="thumbnails">
-                    <div class="thumbnail active" data-image="./images/image-product-1.jpg" tabindex="0" role="button" aria-label="Product image 1">
+                    <div class="thumbnail active" data-image="./images/image-product-1.jpg" tabindex="0" role="button"
+                        aria-label="Product image 1">
                         <img src="./images/image-product-1-thumbnail.jpg" alt="Product thumbnail 1">
                     </div>
-                    <div class="thumbnail" data-image="./images/image-product-2.jpg" tabindex="0" role="button" aria-label="Product image 2">
+                    <div class="thumbnail" data-image="./images/image-product-2.jpg" tabindex="0" role="button"
+                        aria-label="Product image 2">
                         <img src="./images/image-product-2-thumbnail.jpg" alt="Product thumbnail 2">
                     </div>
-                    <div class="thumbnail" data-image="./images/image-product-3.jpg" tabindex="0" role="button" aria-label="Product image 3">
+                    <div class="thumbnail" data-image="./images/image-product-3.jpg" tabindex="0" role="button"
+                        aria-label="Product image 3">
                         <img src="./images/image-product-3-thumbnail.jpg" alt="Product thumbnail 3">
                     </div>
-                    <div class="thumbnail" data-image="./images/image-product-4.jpg" tabindex="0" role="button" aria-label="Product image 4">
+                    <div class="thumbnail" data-image="./images/image-product-4.jpg" tabindex="0" role="button"
+                        aria-label="Product image 4">
                         <img src="./images/image-product-4-thumbnail.jpg" alt="Product thumbnail 4">
                     </div>
                 </div>
             </div>
-        
-            <!-- ISSUE 5: PRODUCT INFORMATION - Title, description, pricing -->  
 
-            <div class="product-info">  
+            <!-- ISSUE 5: PRODUCT INFORMATION - Title, description, pricing -->
+
+            <div class="product-info">
                 <!-- Company Name -->
                 <div class="company-name">SNEAKER COMPANY</div>
 
@@ -134,7 +141,8 @@
 
                 <!-- Description -->
                 <p class="product-description">
-                    These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.
+                    These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer
+                    sole, they'll withstand everything the weather can offer.
                 </p>
 
                 <!-- Pricing Section -->
@@ -144,17 +152,17 @@
                         <span class="discount-badge">50%</span>
                     </div>
                     <span class="original-price">$250.00</span>
-                </div> 
+                </div>
 
-                <!-- ACTIONS (QUANTITY + ADD TO CART) -->  
+                <!-- ACTIONS (QUANTITY + ADD TO CART) -->
                 <div class="product-actions">
-                <!-- ISSUE 6: QUANTITY SELECTOR - Product quantity selection controls -->   
+                    <!-- ISSUE 6: QUANTITY SELECTOR - Product quantity selection controls -->
                     <div class="quantity-selector">
                         <button class="quantity-btn" id="decreaseBtn" aria-label="Decrease quantity">
-                            <img src="./images/icon-minus.svg" alt="Minus">  
+                            <img src="./images/icon-minus.svg" alt="Minus">
                         </button>
                         <span class="quantity-display" id="quantityDisplay">0</span>
-                        <button class="quantity-btn" id="increaseBtn" aria-label="Increase quantity">    
+                        <button class="quantity-btn" id="increaseBtn" aria-label="Increase quantity">
                             <img src="./images/icon-plus.svg" alt="Plus">
                         </button>
                     </div>
@@ -163,14 +171,43 @@
                         <img src="./images/icon-cart.svg" alt="Cart">
                         Add to cart
                     </button>
-              </div>
+                </div>
             </div>
         </section>
     </main>
+    <!-- ISSUE 10: LIGHTBOX - Desktop image viewer with navigation and keyboard support -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" aria-label="Close lightbox">
+                <img src="./images/icon-close.svg" alt="Close">
+            </button>
+            <button class="lightbox-prev" aria-label="Previous image">
+                <img src="./images/icon-previous.svg" alt="Previous">
+            </button>
+            <img src="./images/image-product-1.jpg" alt="Product image" class="lightbox-main-image"
+                id="lightboxMainImage">
+            <button class="lightbox-next" aria-label="Next image">
+                <img src="./images/icon-next.svg" alt="Next">
+            </button>
+            <div class="lightbox-thumbnails">
+                <div class="lightbox-thumbnail active" data-image="./images/image-product-1.jpg">
+                    <img src="./images/image-product-1-thumbnail.jpg" alt="Thumbnail 1">
+                </div>
+                <div class="lightbox-thumbnail" data-image="./images/image-product-2.jpg">
+                    <img src="./images/image-product-2-thumbnail.jpg" alt="Thumbnail 2">
+                </div>
+                <div class="lightbox-thumbnail" data-image="./images/image-product-3.jpg">
+                    <img src="./images/image-product-3-thumbnail.jpg" alt="Thumbnail 3">
+                </div>
+                <div class="lightbox-thumbnail" data-image="./images/image-product-4.jpg">
+                    <img src="./images/image-product-4-thumbnail.jpg" alt="Thumbnail 4">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./JS/Script.js"></script>
 
 
-
-
-    
 
 </body>

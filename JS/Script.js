@@ -3,6 +3,25 @@
 
 
 // ===================================================== 
+// GLOBAL VARIABLES & CONSTANTS
+// ===================================================== 
+let currentImageIndex = 0;
+const images = [
+    './images/image-product-1.jpg',
+    './images/image-product-2.jpg',
+    './images/image-product-3.jpg',
+    './images/image-product-4.jpg'
+];
+
+// Responsive design helper
+function getScreenSize() {
+    const width = window.innerWidth;
+    if (width <= 480) return 'mobile';
+    if (width <= 768) return 'tablet';
+    return 'desktop';
+}
+
+// ===================================================== 
 // ISSUE 3: HEADER & MOBILE NAVIGATION
 // Responsive header with hamburger menu for mobile
 // ===================================================== 
@@ -73,6 +92,116 @@ function switchImage() {
     
     // Update current image index for lightbox
     currentImageIndex = images.findIndex(img => img === newImageSrc);
+}
+
+// ===================================================== 
+// ISSUE 5: PRODUCT INFORMATION
+// Product info display with title, description, and pricing
+// ===================================================== 
+// ISSUE 5 handled in HTML and CSS
+
+// ===================================================== 
+// ISSUE 10: LIGHTBOX FUNCTIONALITY
+// Desktop image viewer with keyboard navigation
+// ===================================================== 
+const lightbox = document.getElementById('lightbox');
+const lightboxMainImage = document.getElementById('lightboxMainImage');
+const lightboxThumbnails = document.querySelectorAll('.lightbox-thumbnail');
+const lightboxClose = document.querySelector('.lightbox-close');
+const lightboxPrev = document.querySelector('.lightbox-prev');
+const lightboxNext = document.querySelector('.lightbox-next');
+
+// Open lightbox on main image click
+mainImage.addEventListener('click', openLightbox);
+
+function openLightbox() {
+    // Only show lightbox on desktop screens
+    if (getScreenSize() === 'desktop') {
+        updateLightboxImage();
+        updateLightboxThumbnails();
+        lightbox.style.display = 'flex';
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden'; // Prevent background scroll
+    }
+}
+
+// Close lightbox
+lightboxClose.addEventListener('click', closeLightbox);
+
+function closeLightbox() {
+    lightbox.style.display = 'none';
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = ''; // Restore scroll
+}
+
+// Close on outside click
+lightbox.addEventListener('click', function(e) {
+    if (e.target === lightbox) {
+        closeLightbox();
+    }
+});
+
+// Close on Escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && lightbox.style.display === 'flex') {
+        closeLightbox();
+    }
+});
+
+// Previous image navigation
+lightboxPrev.addEventListener('click', prevImage);
+
+function prevImage() {
+    currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+    updateLightboxImage();
+    updateLightboxThumbnails();
+}
+
+// Next image navigation
+lightboxNext.addEventListener('click', nextImage);
+
+function nextImage() {
+    currentImageIndex = (currentImageIndex + 1) % images.length;
+    updateLightboxImage();
+    updateLightboxThumbnails();
+}
+
+// Keyboard navigation (Arrow keys)
+document.addEventListener('keydown', function(e) {
+    if (lightbox.style.display === 'flex') {
+        if (e.key === 'ArrowLeft') {
+            prevImage();
+        } else if (e.key === 'ArrowRight') {
+            nextImage();
+        }
+    }
+});
+
+// Lightbox thumbnail click
+lightboxThumbnails.forEach((thumb, index) => {
+    thumb.addEventListener('click', function() {
+        currentImageIndex = index;
+        updateLightboxImage();
+        updateLightboxThumbnails();
+    });
+});
+
+function updateLightboxImage() {
+    lightboxMainImage.src = images[currentImageIndex];
+    lightboxMainImage.alt = `Product image ${currentImageIndex + 1}`;
+    
+    // Sync with main gallery
+    mainImage.src = images[currentImageIndex];
+    mainImage.alt = `Product image ${currentImageIndex + 1}`;
+    thumbnails.forEach((thumb, index) => {
+        thumb.classList.toggle('active', index === currentImageIndex);
+    });
+}
+
+function updateLightboxThumbnails() {
+    lightboxThumbnails.forEach((thumb, index) => {
+        thumb.classList.toggle('active', index === currentImageIndex);
+    });
 }
 
 // ===================================================== 
@@ -348,9 +477,51 @@ function showNotification(message) {
     }, 3000);
 }
 
+// ===================================================== 
+// ISSUE 9: RESPONSIVE DESIGN
+// Mobile, tablet, and desktop responsive layout
+// ===================================================== 
+// Track current screen size
+let currentScreenSize = getScreenSize();
 
+// Listen for window resize and adjust layout
+window.addEventListener('resize', () => {
+    const newScreenSize = getScreenSize();
+    if (newScreenSize !== currentScreenSize) {
+        currentScreenSize = newScreenSize;
+        // Adjust layout on screen size change
+        adjustResponsiveLayout();
+    }
+});
 
+function adjustResponsiveLayout() {
+    // Close cart dropdown when switching screen sizes
+    if (cartDropdown && !cartDropdown.hasAttribute('hidden')) {
+        cartDropdown.setAttribute('hidden', '');
+        cartDropdown.setAttribute('aria-hidden', 'true');
+    }
+    
+    // Close mobile menu when switching to desktop
+    if (currentScreenSize === 'desktop' && mobileNavOverlay && mobileNavOverlay.classList.contains('active')) {
+        mobileNavOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+}
 
-// Initialize
-updateCartDisplay();
-console.log('✓ Script loaded successfully');
+if (mobilePrev && mobileNext) {
+    mobilePrev.addEventListener('click', (e) => {
+        e.stopPropagation();
+        currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+        updateLightboxImage();
+    });
+    
+    mobileNext.addEventListener('click', (e) => {
+        e.stopPropagation();
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+        updateLightboxImage();
+    });
+}
+
+// ===================================================== 
+// INITIALIZATION & LOGGING
+// ===================================================== 
