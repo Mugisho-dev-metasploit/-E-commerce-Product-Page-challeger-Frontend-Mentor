@@ -64,6 +64,20 @@ This project is a responsive e-commerce product page for sneakers, developed wit
 - Lightbox for desktop
 - Files: `index.html` (lightbox), `CSS/styles.css` (animations), `JS/Script.js` (lightbox, keyboard nav)
 
+### ISSUE 11 – Code Review and Final Improvement
+
+This step involves:
+
+🔎 Reviewing all the code
+
+🐞 Fixing bugs
+
+⚡ Optimizing and improving the code
+
+🎨 Enhancing the user experience
+
+📦 Preparing the final version of the project
+
 ## File Structure
 ```
 Challenge frontend Mentor/

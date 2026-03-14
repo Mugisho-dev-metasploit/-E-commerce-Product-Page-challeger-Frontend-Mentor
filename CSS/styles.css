@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}   
+}
 
 /* ISSUE 2: DESIGN SYSTEM - CSS Variables for Colors, Typography, and Spacing */
 
@@ -128,7 +128,8 @@ body {
 .desktop-nav ul li a::after {
     content: '';
     position: absolute;
-    bottom: -1px; /* Align exactly with the header's border-bottom */
+    bottom: -1px;
+    /* Align exactly with the header's border-bottom */
     left: 0;
     width: 100%;
     height: 4px;
@@ -198,9 +199,17 @@ body {
 }
 
 @keyframes badgeBounce {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.4); }
-    100% { transform: scale(1); }
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.4);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
 .user-avatar .avatar-btn {
@@ -232,7 +241,7 @@ body {
     width: 360px;
     background-color: var(--color-white);
     border-radius: 0.625rem;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
     z-index: 100;
     padding: 0;
     overflow: hidden;
@@ -244,6 +253,7 @@ body {
         opacity: 0;
         transform: translateY(-10px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -281,7 +291,8 @@ body {
 }
 
 .cart-items {
-    display: none; /* shown when item added */
+    display: none;
+    /* shown when item added */
 }
 
 .cart-item {
@@ -380,7 +391,7 @@ body {
     outline-offset: 2px;
 }
 
-/* Hover states enhancement */ 
+/* Hover states enhancement */
 .quantity-btn:active {
     transform: scale(0.95);
 }
@@ -389,7 +400,7 @@ body {
 .add-to-cart-btn:active {
     transform: scale(0.98);
 }
-  
+
 .checkout-btn:active {
     transform: scale(0.98);
 }
@@ -592,7 +603,7 @@ img {
     display: block;
     max-width: 100%;
     height: auto;
-} 
+}
 
 /* Improved button accessibility */
 button {
@@ -892,7 +903,7 @@ html {
     padding: 2px 8px;
     border-radius: 0.375rem;
 }
- 
+
 .original-price {
     font-size: 1rem;
     font-weight: var(--font-weight-bold);
@@ -949,7 +960,7 @@ html {
 }
 
 .add-to-cart-btn {
-    flex: 2; 
+    flex: 2;
     height: 56px;
     background-color: var(--color-orange);
     color: var(--color-very-dark-blue);
@@ -979,7 +990,7 @@ html {
 
 /* ISSUE 9: RESPONSIVE DESIGN - Mobile (480px), Tablet (481-768px), Desktop (769px+) */
 
-/* Tablet & Medium screens (up to 768px) */  
+/* Tablet & Medium screens (up to 768px) */
 @media (max-width: 768px) {
     .header {
         border-bottom: none;
@@ -1080,7 +1091,7 @@ html {
     .thumbnails {
         gap: 1rem;
         justify-content: center;
-        
+
     }
 
     .thumbnail {
@@ -1091,6 +1102,7 @@ html {
 
 /* Mobile screens (small - 480px and below) */
 @media (max-width: 480px) {
+
     /* GLOBAL */
     html {
         font-size: 14px;
@@ -1116,7 +1128,7 @@ html {
     .thumbnails {
         gap: 1rem;
         justify-content: center;
-        
+
     }
 
     .thumbnail {
@@ -1165,7 +1177,7 @@ html {
         display: flex;
         flex-direction: column;
         inline-size: auto;
-        
+
     }
 
     .pricing-container {
@@ -1276,155 +1288,8 @@ html {
         transform: none;
     }
 
-    /* GLOBAL */
-    html {
-        font-size: 14px;
-    }
 
-    .container {
-        padding: 0;
-        width: 100%;
-    }
 
-    .product-section {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-        padding: 0 0.75rem;
-    }
-
-    .product-gallery {
-        gap: 1rem;
-        margin: 0;
-        width: 100%;
-    }
-
-    .thumbnails {
-        gap: 1rem;
-        justify-content: center;
-        
-    }
-
-    .thumbnail {
-        width: 70px;
-        height: 70px;
-    }
-
-    .main-image-wrapper {
-        border-radius: 0;
-    }
-
-    .main-image {
-        max-height: 50vh;
-        object-fit: contain;
-    }
-
-    /* ISSUE 5: PRODUCT INFO */
-    .product-info {
-        max-width: 100%;
-        padding: 0;
-        gap: 0.5rem;
-        justify-content: center;
-    }
-
-    .company-name {
-        font-size: 1rem;
-        letter-spacing: 1.5px;
-        margin-bottom: 0.75rem;
-    }
-
-    .product-title {
-        font-size: 1.75rem;
-        line-height: 1.2;
-        margin-bottom: 0.75rem;
-    }
-
-    .product-description {
-        font-size: 1rem;
-        line-height: 1.5;
-        margin-bottom: 1rem;
-    }
-
-    /* ISSUE 6: PRICING */
-    .pricing-section {
-        margin-bottom: 1.25rem;
-        display: flex;
-        flex-direction: column;
-        inline-size: auto;
-        
-    }
-
-    .pricing-container {
-        gap: 4rem;
-        justify-content: center;
-    }
-
-    .current-price {
-        font-size: 1.5rem;
-    }
-
-    .discount-badge {
-        font-size: 1.5rem;
-        padding: 0.25rem 0.5rem;
-    }
-
-    .original-price {
-        font-size: 1.5rem;
-    }
-
-    /* ISSUE 6: QUANTITY SELECTOR */
-    .quantity-selector {
-        width: 100%;
-        height: 48px;
-    }
-
-    /* ISSUE 7: ADD TO CART */
-    .product-actions {
-        flex-direction: column;
-        gap: 0.75rem;
-    }
-
-    .add-to-cart-btn {
-        width: 100%;
-        height: 48px;
-        font-size: 0.875rem;
-    }
-
-    /* ISSUE 8: CART DROPDOWN */
-    .cart-dropdown {
-        position: fixed;
-        width: calc(100% - 2rem);
-        max-width: 320px;
-        left: 1rem;
-        right: 1rem;
-        top: 76px;
-        z-index: 1000;
-    }
-
-    .cart-item {
-        gap: 0.75rem;
-    }
-
-    .cart-item img {
-        width: 40px;
-        height: 40px;
-    }
-
-    .item-name {
-        font-size: 0.75rem;
-    }
-
-    .item-price {
-        font-size: 0.75rem;
-    }
-
-    .delete-btn img {
-        width: 10px;
-    }
-
-    .checkout-btn {
-        font-size: 0.875rem;
-        padding: 0.75rem 0;
-    }
 }
 
 /* NOTIFICATIONS */
@@ -1465,4 +1330,3 @@ html {
         gap: 3rem;
     }
 }
-
