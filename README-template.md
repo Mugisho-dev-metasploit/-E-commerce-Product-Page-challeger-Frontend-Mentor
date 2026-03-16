@@ -11,8 +11,8 @@ This project helped me practice building a responsive product page with interact
     - [The challenge](#the-challenge)
     - [Screenshot](#screenshot)
     - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
+  - [My process](#my-process)
+    - [Built with](#built-with)
     - [What I learned](#what-i-learned)
   - [Author](#author)
 
@@ -38,9 +38,9 @@ Users should be able to:
 - Solution URL: [GitHub Repository](https://github.com/Mugisho-dev-metasploit/-E-commerce-Product-Page-challeger-Frontend-Mentor)
 - Live Site URL: [Live Site Demo](https://mugisho-dev-metasploit.github.io/-E-commerce-Product-Page-challeger-Frontend-Mentor/)
 
-# My process
+## My process
 
-## Built with
+### Built with
 
 - Semantic HTML5
 - CSS3
@@ -49,7 +49,6 @@ Users should be able to:
 - Mobile-first responsive design
 - Vanilla JavaScript
 - Accessibility best practices
-
 
 ### What I learned
 
@@ -61,19 +60,20 @@ I also practiced writing clean logic for state management, such as cart interact
 Here is an example of the image switching logic:
 
 ```js
-thumbnails.forEach(thumbnail => {
-  thumbnail.addEventListener("click", function() {
+thumbnails.forEach((thumbnail) => {
+  thumbnail.addEventListener("click", function () {
     // Remove active class from all thumbnails
-    thumbnails.forEach(t => t.classList.remove("active"));
-    
+    thumbnails.forEach((t) => t.classList.remove("active"));
+
     // Add active class to clicked thumbnail
     this.classList.add("active");
-    
+
     // Update main image source
     const newImageSrc = this.getAttribute("data-image");
     mainImage.src = newImageSrc;
   });
 });
+```
 
 ## Author
 
