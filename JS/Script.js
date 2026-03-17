@@ -1,7 +1,5 @@
-// ===================================================== 
-// ISSUE 4: PRODUCT IMAGE GALLERY
-// Main image gallery with thumbnail selection
-// =====================================================
+
+// PRODUCT IMAGE GALLERY - ISSUE 4
 const mainImage = document.getElementById('mainImage');
 const thumbnails = document.querySelectorAll('.thumbnail');
 
@@ -11,7 +9,7 @@ thumbnails.forEach(thumbnail => {
         switchImage.call(this);
     });
     
-    // Keyboard handler  
+    // Keyboard handler
     thumbnail.addEventListener('keydown', function(e) {
         if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
@@ -25,17 +23,15 @@ function switchImage() {
     mainImage.src = newImageSrc;
     mainImage.alt = this.querySelector('img').alt;
     
-    // Update active thumbnail   
+    // Update active thumbnail
     thumbnails.forEach(thumb => thumb.classList.remove('active'));
     this.classList.add('active');
     
     // Update current image index for lightbox
     currentImageIndex = images.findIndex(img => img === newImageSrc);
 }
-// ===================================================== 
-// ISSUE 10: LIGHTBOX FUNCTIONALITY
-// Desktop image viewer with keyboard navigation
-// ===================================================== 
+// LIGHTBOX FUNCTIONALITY
+// =====================================================
 const lightbox = document.getElementById('lightbox');
 const lightboxMainImage = document.getElementById('lightboxMainImage');
 const lightboxThumbnails = document.querySelectorAll('.lightbox-thumbnail');
@@ -135,12 +131,6 @@ function updateLightboxImage() {
     });
 }
 
-function updateLightboxThumbnails() {
-    lightboxThumbnails.forEach((thumb, index) => {
-        thumb.classList.toggle('active', index === currentImageIndex);
-    });
-}
-
 // Mobile gallery navigation
 const mobilePrev = document.getElementById('mobilePrev');
 const mobileNext = document.getElementById('mobileNext');
@@ -166,10 +156,9 @@ function syncMainImage() {
     });
 }
 
-// ===================================================== 
-// ISSUE 6: QUANTITY SELECTOR
-// + and - buttons to select product quantity
-// ===================================================== 
+// =====================================================
+// QUANTITY SELECTOR - ISSUE 6
+// =====================================================
 const quantityDisplay = document.getElementById('quantityDisplay');
 const increaseBtn = document.getElementById('increaseBtn');
 const decreaseBtn = document.getElementById('decreaseBtn');
@@ -205,17 +194,14 @@ function updateQuantityDisplay() {
     quantityDisplay.textContent = quantity;
 }
 
-// ===================================================== 
-// ISSUE 7: ADD TO CART
-// ISSUE 8: CART MANAGEMENT & DROPDOWN
-// Functional cart with add/remove items and checkout
-// ===================================================== 
+// =====================================================
+// CART MANAGEMENT - ISSUE 7 & 8
+// =====================================================
 const addToCartBtn = document.getElementById('addToCartBtn');
 const cartDropdown = document.getElementById('cartDropdown');
 const cartEmpty = document.querySelector('.cart-empty');
 const cartItems = document.querySelector('.cart-items');
 const cartTotal = document.getElementById('cartTotal');
-
 // Removed dead code: cartQuantity
 
 let cart = [];
@@ -439,10 +425,9 @@ function showNotification(message) {
     }, 3000);
 }
 
-// ===================================================== 
-// ISSUE 3: HEADER & MOBILE NAVIGATION
-// Responsive header with hamburger menu for mobile
-// ===================================================== 
+// =====================================================
+// MOBILE MENU - ISSUE 3
+// =====================================================
 const menuToggle = document.getElementById('menuToggle');
 const closeMenu = document.getElementById('closeMenu');
 const mobileNavOverlay = document.getElementById('mobileNavOverlay');
